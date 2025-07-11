@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: chandan2012/11tyTest   # 👈 your GitHub repo
+  branch: main                    # your default branch
+  site_domain: your-site.netlify.app  # if using Netlify Identity (optional)
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
