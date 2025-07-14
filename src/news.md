@@ -10,6 +10,7 @@ layout: layouts/base.njk
     <li>
       <a href="{{ post.url }}">{{ post.data.title }}</a> —
       <small>{{ post.date  }}</small>
+      {{post.data.tags}}
     </li>
   {% endfor %}
 </ul>
