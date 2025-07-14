@@ -2,14 +2,21 @@
 layout: base.njk
 ---
 
-<h1>
-    {{ title }}
-</h1>
-
-{% if image %}
-    <img src="{{ image }}" alt="{{ title }}" width="600"/>
-{% endif %}
-
-<div>
-    {{ content | safe }}
-</div>
+{% block content %}
+    <article class="post">
+        <h1>{{ title }}</h1>
+        {% if date %}
+            <p>
+                <small>
+                    <strong>Published:</strong>
+                    {{ date | date('MMMM D, YYYY') }}</small>
+            </p>
+        {% endif %}
+        {% if image %}
+            <img src="{{ image }}" alt="{{ title }}" style="max-width: 100%; margin: 20px 0;"/>
+        {% endif %}
+        <div class="post-body">
+            {{ content | safe }}
+        </div>
+    </article>
+{% endblock %}
